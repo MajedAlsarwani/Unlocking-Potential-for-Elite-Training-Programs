@@ -8,18 +8,20 @@ st.set_page_config(page_title="Prediction App", layout="wide")
 
 st.title("Program Completion Prediction App")
 st.markdown("---")
-# Display 3 images in a row
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.image("1.png", use_container_width=True)
+# # Display 3 images in a row
+# col1, col2, col3, col4 = st.columns(4)
+# with col1:
+#     st.image("1.png", use_container_width=True)
 
-with col2:
-    st.image("2.png", use_container_width=True)
+# with col2:
+#     st.image("4.png", use_container_width=True)
 
-with col3:
-    st.image("3.png", use_container_width=True)
+# with col3:
+#     st.image("3.png", use_container_width=True)
+# with col4:
+#     st.image("2.png", use_container_width=True)
 
-st.markdown("---")
+st.markdown(" Note: test data should be scaled to make predictions. ")
 # Load your trained model pipeline
 model = joblib.load('final_model_pipeline.pkl')
 
