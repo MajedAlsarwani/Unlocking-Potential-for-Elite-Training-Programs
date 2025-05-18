@@ -21,7 +21,7 @@ st.markdown("---")
 # with col4:
 #     st.image("2.png", use_container_width=True)
 
-st.markdown(" Note: test data should be scaled to make predictions. ")
+st.markdown(" Note: test data should be in the same format as the training data.")
 # Load your trained model pipeline
 model = joblib.load('final_model_pipeline.pkl')
 
