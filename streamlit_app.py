@@ -9,6 +9,8 @@ st.set_page_config(page_title="Prediction App", layout="wide")
 st.title("Program Completion Prediction for Tuwaiq Academy")
 st.markdown("---")
 
+
+
 st.markdown(" Note: test data should be in the same format as the training data.")
 # Load your trained model pipeline
 model = joblib.load('final_model_pipeline.pkl')
@@ -52,11 +54,61 @@ with st.form("manual_input_form"):
 
     age = st.number_input("Age", min_value=10, max_value=70, value=25)
     gender = st.selectbox("Gender", options=["ذكر", "أنثى"])
-    home_region = st.selectbox("Home Region", options=["منطقة الرياض", "منطقة عسير", "منطقة مكة", "منطقة الشرقية", "أخرى"])  # Update list as needed
+    home_region = st.selectbox(
+    "Home Region", 
+    options=[
+        "منطقة الرياض",
+        "منطقة مكة المكرمة",
+        "المنطقة الشرقية",
+        "منطقة المدينة المنورة",
+        "منطقة عسير",
+        "منطقة القصيم",
+        "منطقة جازان",
+        "منطقة تبوك",
+        "منطقة الباحة",
+        "منطقة حائل",
+        "منطقة نجران",
+        "منطقة الحدود الشمالية",
+        "منطقة الجوف"
+        ]
+    ) # Update list as needed
     home_city = st.text_input("Home City", value="الرياض")
+    main_category = st.selectbox(
+        "Program Main Category Code", 
+        options=[
+            "CAUF",
+            "PCRF",
+            "APMR",
+            "TOSL",
+            "GRST",
+            "ABIR",
+            "INFA",
+            "SERU",
+            "DTFH",
+            "QWLM"
+        ]
+    ) # Extend list
+    sub_category = st.selectbox(
+    "Program Sub Category Code",
+    options=[
+        "SWPS",
+        "PCRF",
+        "SRTA",
+        "INFA",
+        "TOSL",
+        "APMR",
+        "CAUF",
+        "CRDP",
+        "ERST",
+        "KLTM",
+        "ABIR",
+        "QTDY",
+        "ASCW",
+        "DTFH",
+        "QWLM"
+        ]
+    )
 
-    main_category = st.selectbox("Program Main Category Code", options=["PCRF", "APMR", "TOSL", "CAUF", "SWPS"])  # Extend list
-    sub_category = st.selectbox("Program Sub Category Code", options=["PCRF", "APMR", "TOSL", "SWPS", "CAUF"])
     skill_level = st.selectbox("Program Skill Level", options=["غير معروف", "متوسط", "مبتدئ", "متقدم"])
     presentation_method = st.selectbox("Program Presentation Method", options=["حضوري", "عن بعد"])
 
