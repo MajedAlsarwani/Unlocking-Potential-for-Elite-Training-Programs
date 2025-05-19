@@ -72,7 +72,6 @@ with st.form("manual_input_form"):
         "منطقة الجوف"
         ]
     ) # Update list as needed
-    home_city = st.text_input("Home City", value="الرياض")
     main_category = st.selectbox(
         "Program Main Category Code", 
         options=[
@@ -147,7 +146,6 @@ with st.form("manual_input_form"):
                 "Age": [age],
                 "Gender": [gender],
                 "Home Region": [home_region],
-                "Home City": [home_city],
                 "Program Main Category Code": [main_category],
                 "Program Sub Category Code": [sub_category],
                 "Program Skill Level": [skill_level],
